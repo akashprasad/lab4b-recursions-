@@ -14,16 +14,16 @@ int array_max(int a[10])
   }
   return a[0];
 }
-int array_min(int a[10])
+int array_min(int b[10])
 {
-  if(a[i]<a[0])
-    a[0]=a[i];
+  if(b[x]<b[0])
+    b[0]=b[x];
   if(x<10)
   {
     x++;
-    array_min(a);
+    array_min(b);
   }
-  return a[0];
+  return b[0];
 }
 int main() 
 {
