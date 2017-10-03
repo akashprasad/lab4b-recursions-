@@ -2,23 +2,25 @@
 // question 11
 #include <iostream>
 using namespace std;
- 
-int fibo_recur(int n)
-{
-    if (n == 1 )
-        return 0;
-   else if(n==2)
-       return 1;
-    else
-        return fibo_recur(n - 1) + fibo_recur(n - 2);;
-}
+
+int hcf(int n1, int n2);
 
 int main()
 {
-    int n;
-    
-        cout<<"\n \nEnter the integer n to find nth fibonnaci no.";
-        cin>>n;
-        cout<<"\n \nThe nth Fibonacci number is: "<<fibo_recur(n)<<endl;
-        return 0;
+   int n1, n2;
+   cout << "\n \nEnter two positive integers: ";
+   cin >> n1 >> n2;
+
+   cout << "\nH.C.F of " << n1 << " & " <<  n2 << " is: " << hcf(n1, n2);
+
+   return 0;
 }
+
+int hcf(int n1, int n2)
+{
+    if (n2 != 0)
+       return hcf(n2, n1 % n2);
+    else 
+       return n1;
+}
+
