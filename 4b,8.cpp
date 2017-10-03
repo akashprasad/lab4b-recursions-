@@ -2,21 +2,25 @@
 // question 8
 #include <iostream>
 using namespace std;
-int sum=0,di=0;
-int sum_digit(int a) 
-{
-  di=a%10;
-  sum=sum+di;
-  a=a/10;
-  if(a!=0)
-   sum_digit(a);
-  return sum;
+
+int sumOfDigits(int n)
+{ 
+        if(n==0)
+        {
+              return 0;
+        }
+        else
+        {
+              return (n%10) + sumOfDigits(n/10);
+        }
 }
-int main() 
+
+int main()
 {
-   int n;
-   cout<<"Enter a number :  ";
-   cin>>n;
-   cout<<"Sum of the digits of the "<<n<<" : "<<sum_digit(n);
-   return 0;
+        int num;
+        
+        cout<<"\n \nENTER NUMBER: ";
+        cin>>num;
+        cout<<"\n \nSUM OF DIGITS: "<<sumOfDigits(num);
+        return 0;
 }
