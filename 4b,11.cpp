@@ -1,24 +1,24 @@
 # lab4b-recursions-
 // question 11
-#include<iostream>
+#include <iostream>
 using namespace std;
-int i=1,h=0;
-int hcf(int a,int b)
+ 
+int fibo_recur(int n)
 {
-  if(a%i==0 && b%i==0)
-   h=i;
-  if(i<=a)
-  {
-    i++;
-    hcf(a,b);
-  }
-  return h;
+    if (n == 1 )
+        return 0;
+   else if(n==2)
+       return 1;
+    else
+        return fibo_recur(n - 1) + fibo_recur(n - 2);;
 }
+
 int main()
 {
-  int x,y;
-  cout<<"Enter two number : ";
-  cin>>x>>y;
-  cout<<endl<<"HCf of the numbers : "<<hcf(x,y);
-  return 0;
+    int n;
+    
+        cout<<"\n \nEnter the integer n to find nth fibonnaci no.";
+        cin>>n;
+        cout<<"\n \nThe nth Fibonacci number is: "<<fibo_recur(n)<<endl;
+        return 0;
 }
