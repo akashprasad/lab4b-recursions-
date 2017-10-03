@@ -2,23 +2,27 @@
 // question 14
 #include <iostream>
 using namespace std;
-int i=0,sum=0;
-int array(int x[10]) 
+int array(int x[],int n)
 {
-  sum=sum+x[i];
-  if(i<9)
+  int sum;
+  if(n==0)
   {
-     i++;
-     array(x);
+     sum=0;
   }
-  return sum;
+  else
+     sum=x[n-1]+array(x,n-1);
+     return (sum);
 }
-int main() 
+
+int main()
 {
-   int n[10];
-   cout<<"Enter 10 element of array : ";
-   for(int k=0;k<10;k++)
+   int n[100],l;
+   cout<<"Enter the number of element of array(0 to 100) : ";
+   cin>>l;
+   cout<<"Enter element of array(0 tom 100) : ";
+   for(int k=0;k<l;k++)
      cin>>n[k];
-   cout<<endl<<"Sum of the  element of the array : "<<array(n);
+   cout<<endl<<"Sum of the  element of the array : "<<array(n,l);
    return 0;
 }
+
