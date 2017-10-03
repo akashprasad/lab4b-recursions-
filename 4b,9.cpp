@@ -2,22 +2,25 @@
 // question 9
 #include <iostream>
 using namespace std;
-int fact=1,i=1;
-int factorial(int a) 
-{
-  fact=fact*i;
-  if(i<a)
-  {
-    i++;
-    factorial(a);
-  }
-  return fact;
+
+int factorial(int n)
+{ 
+        if(n==1)
+        {
+              return 1;
+        }
+        else
+        {
+              return n*factorial(n-1);
+        }
 }
-int main() 
+
+int main()
 {
-   int n;
-   cout<<"Enter a number :  ";
-   cin>>n;
-   cout<<"the factorial of  "<<n<<" : "<<factorial(n);
-   return 0;
+        int num;
+        
+        cout<<"\n \nENTER NUMBER: ";
+        cin>>num;
+        cout<<"\n \nFactorial of the number is: "<<factorial(num);
+        return 0;
 }
