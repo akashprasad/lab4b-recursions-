@@ -2,18 +2,17 @@
 // question 4
 #include <iostream>
 using namespace std;
-int sum=0;int i=1;
 int print_sum(int n)
 {
-  sum=sum+i;
-  if(i<n)
+  int sum=0;
+  if(n==0)
   {
-  	i++;
-  	print_sum(n);
+        return sum;
   }
-  return sum;
+  sum=sum+n;
+  return sum+print_sum(n-1);
 }
-int main() 
+int main()
 {
    int n;
    cout<<"Enter nth term : ";
@@ -21,3 +20,5 @@ int main()
    cout<<"Sum of natural number between 1 & "<<n<<" : "<<print_sum(n);
    return 0;
 }
+
+
