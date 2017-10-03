@@ -2,25 +2,34 @@
 // question 7
 #include <iostream>
 using namespace std;
-int rev=0,di=0;
-int reverse(int a) 
-{
-  di=a%10;
-  rev=rev*10+di;
-  a=a/10;
-  if(a!=0)
-    reverse(a);
-  return rev;
+
+
+int reverse_function(int num)
+{  
+   static int rem, sum=0;
+   if(num)
+   {
+      rem=num%10;
+      sum=sum*10+rem;
+      
+      reverse_function(num/10);
+   }
+   else
+      return 0;
+    return sum;
 }
-int main() 
+
+int main()
 {
-   int n,temp;
-   cout<<"Enter a number :  ";
-   cin>>n;
-   temp=reverse(n);
-   if(n==temp)
-     cout<<endl<<"Palindrome number";
-   else 
-     cout<<endl<<"Not Palindrome number";
-   return 0;
+  int n;
+  cout<<"\n \nEnter the number: ";
+  cin>>n;
+  int rev=reverse_function(n);
+  cout<<"\n \nThe reverse of the number is: "<<rev;
+  ;
+  if(n==rev)
+    cout<<"\n \nIt is a PALINDROME";
+  else
+    cout<<"\n \nIt is not a PALINDROME":
+  return 0;
 }
