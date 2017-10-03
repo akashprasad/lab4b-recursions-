@@ -2,25 +2,22 @@
 // question 10
 #include <iostream>
 using namespace std;
-int a=0,b=1,c=1,i=1;
-void fibo(int x) 
+ 
+int fibo_recur(int n)
 {
-  cout<<c<<" ";
-  c=a+b;
-  a=b;
-  b=c;
-  if(i<x)
-  {
-    i++;
-    fibo(x);
-  }
+    if (n == 1 )
+        return 0;
+   else if(n==2)
+       return 1;
+    else
+        return fibo_recur(n - 1) + fibo_recur(n - 2);;
 }
-int main() 
+
+int main()
 {
-   int n;
-   cout<<"Enter nth term :  ";
-   cin>>n;
-   cout<<endl<<n<<" Fibonacci term  : ";
-   fibo(n);
-   return 0;
-}
+    int n;
+    
+        cout<<"\n \nEnter the integer n to find nth fibonnaci no.";
+        cin>>n;
+        cout<<"\n \nThe nth Fibonacci number is: "<<fibo_recur(n)<<endl;
+        return 0;
