@@ -2,14 +2,15 @@
 // question 2
 #include <iostream>
 using namespace std;
-int i=1;
-void print_natural(int n)
+void print_natural(int i,int n)
 {
-  cout<<i<<" ";
-  if(i<n)
+  if(i==n)
   { 
-   i++;
-   print_natural(n);
+   cout<<" "<<i;
+   return;
+  } 
+   cout<<i<<" ";
+   print_natural(i+1,n);
   } 
 }
 int main() 
@@ -17,6 +18,6 @@ int main()
     int n;
     cout<<"Enter nth term : ";
     cin>>n;
-    print_natural(n);
+    print_natural(1,n);
     return 0;
 }
