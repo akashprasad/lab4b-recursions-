@@ -2,39 +2,39 @@
 // question 5
 #include <iostream>
 using namespace std;
-int i=1;int j=1,sum=0,sum2=0;
-int print_even(int n)
+
+int even(int low, int upp)
 {
-  if(i<=n)
-  {
-     if(i%2==0)
-     {
-       sum=sum+i;
-     }
-     i++;
-     print_even(n);
-  }
-  return sum;
-}
-int print_odd(int n)
-{
-  if(j<=n)
-  {
-   if(j%2!=0)
-   {
-      sum2=sum2+j;
-   } 
-   j++;
-   print_odd(n);
-  } 
-  return sum2;
-}   
-int main() 
-{
-   int n;
-   cout<<"Enter nth term : ";
-   cin>>n;
-   cout<<endl<<"The sum of Even number between 1 & "<<n<<" : "<< print_even(n);
-   cout<<endl<<"The sum of Odd number between 1 & "<<n<<" : "<< print_odd(n);
+  if(low<=upp)
+   return (low + even(low+2,upp));
+  else 
    return 0;
+}
+int odd(int low, int upp)
+{
+  if(low<=upp)
+   return (low + odd(low+2,upp));
+  else 
+   return 0;
+}
+
+int main()
+{ 
+  int num1, num2, evensum, oddsum;
+  cout<<"\n \nEnter the lower and upper limit of range: ";
+  cin>>num1>>num2;
+  
+  if(num1%2==0)
+  {
+  evensum=even(num1, num2);
+  oddsum=odd(num1+1, num2);
+  }
+  else
+  {
+  oddsum=odd(num1, num2);
+  evensum=even(num1+1,num2);
+  }
+  cout<<"\nSum of even numbers: "<<evensum;
+  cout<<"\nSum of odd numbers: "<<oddsum;
+  return 0;
 }
