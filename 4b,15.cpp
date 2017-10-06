@@ -2,36 +2,32 @@
 // question 15
 #include <iostream>
 using namespace std;
-int i=0,x=0;
-int array_max(int a[10])
-{
-  if(a[i]>a[0])
-    a[0]=a[i];
-  if(i<10)
-  {
-  	i++;
-  	array_max(a);
-  }
-  return a[0];
+
+int max (int a[100],int n,int i,int m)
+{if (i!=n)
+{	{if(a[i]>m)
+{m=a[i];}
+return max (a,n,i+1,m);}}
+else
+return m;
 }
-int array_min(int b[10])
-{
-  if(b[x]<b[0])
-    b[0]=b[x];
-  if(x<10)
-  {
-    x++;
-    array_min(b);
-  }
-  return b[0];
+
+int min (int a[100],int n,int i,int m)
+{if (i!=n)
+{	{if(a[i]<m)
+{m=a[i];}
+return min (a,n,i+1,m);}}
+else
+return m;
 }
+
 int main() 
-{
-	int a[10];
-	cout<<endl<<"Enter the element of array : ";
-	for(int x=0;x<10;x++)
-	 cin>>a[x];
-	cout<< endl<<"maximum element of array : "<<array_max(a);
-	cout<<endl<<"minimum element of array : "<<array_min(a);
+{	int a[100],n,i;
+	cout<<"Enter the number of elements in the array ";
+	cin>>n;	cout<<"\nEnter the array elements ";
+	for(i=0;i<n;i++)
+	{cin>>a[i];}
+    cout<<"\nThe maximum element is "<<max(a,n,0,a[0]);	
+    cout<<"\nThe maximum element is "<<min(a,n,0,a[0]);	
 	return 0;
 }
