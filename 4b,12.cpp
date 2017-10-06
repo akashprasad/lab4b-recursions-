@@ -1,26 +1,24 @@
 # lab4b-recursions-
 // question 12
-#include<iostream>
+#include <iostream>
 using namespace std;
-int i=1,h=0;
-int hcf(int a,int b)
+int lcm(int a,int b,int c)
 {
-  if(a%i==0 && b%i==0)
-   h=i;
-  if(i<=a)
-  {
-    i++;
-    hcf(a,b);
-  }
-  return h;
+if (b%a==0&&b%c==0)
+return b;
+else
+return lcm(a,b+1,c);}
+
+int main() 
+{	int a,b;
+	cout<<"Enter the numbers ";
+	cin>>a>>b;
+	if(a>b)	
+{cout<<"\nLCM of given numbers is "<<lcm(a,a,b);}
+	else if (b>a)
+	{cout<<"\nLCM is "<<lcm(a,b,b);}
+	else
+	cout<<"\n The LCM is "<<a;
+	return 0;
 }
-int main()
-{
-  int x,y,lc,hc;
-  cout<<"Enter two number : ";
-  cin>>x>>y;
-  hc=hcf(x,y);
-  lc=(x*y)/hc;
-  cout<<endl<<"lCM of the numbers : "<<lc;
-  return 0;
-}
+
