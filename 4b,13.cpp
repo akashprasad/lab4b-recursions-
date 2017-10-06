@@ -2,26 +2,20 @@
 // question 13
 #include <iostream>
 using namespace std;
-int i=0;
-int array(int x[],int n)
-{
-  cout<<x[i]<<endl;;
-  if(i<n-1)
-  {
-     i++;
-     array(x,n);
-  }
-  return 0;
+void disparr (int a[100],int n,int i)
+{if(i!=n)	
+{cout<<a[i]<<" ";
+disparr (a,n,i+1);
 }
-int main()
-{
-   int n[100],l;
-   cout<<"Enter the number of element of array(0 to 100): ";
-   cin>>l;
-   cout<<"Enter element of array(0 to 100) : ";
-   for(int k=0;k<l;k++)
-     cin>>n[k];
-   cout<<endl<<"element of the array : "<<endl;
-   array(n,l);
-   return 0;
+}
+
+int main() 
+{	int a[100],n,i;
+	cout<<"Enter the number of elements in the array ";
+	cin>>n;	cout<<"\nEnter the array elements ";
+	for(i=0;i<n;i++)
+	{cin>>a[i];}
+	cout<<"\nTHe elements of the array are ";
+	disparr(a,n,0);
+	return 0;
 }
